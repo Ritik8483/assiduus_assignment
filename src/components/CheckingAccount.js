@@ -44,10 +44,9 @@ const selectStyle = {
 const CheckingAccount = ({ months, setMonths, manage, setManage }) => {
   const axesRef = useRef(null);
   const [dataArr, setDataArr] = useState([]);
-
-  const xAxisArr = monthsArr.map(() => faker.number.int({ min: 0, max: 10 }));
-
+  
   useEffect(() => {
+    const xAxisArr = monthsArr.map(() => faker.number.int({ min: 0, max: 10 }));
     const xItem = xAxisArr.map((item, index) => {
       return { x: item, y: item + index };
     });
