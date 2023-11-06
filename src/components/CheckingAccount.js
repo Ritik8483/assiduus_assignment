@@ -53,19 +53,18 @@ const selectStyle = {
   fontWeight: "600",
 };
 
-const CheckingAccount = ({months,setMonths}) => {
+const CheckingAccount = ({ months, setMonths, manage, setManage }) => {
   const axesRef = useRef(null);
-  const [manage, setManage] = useState("");
   const [dataArr, setDataArr] = useState([]);
 
   const xAxisArr = monthsArr.map(() => faker.number.int({ min: 0, max: 10 }));
 
   useEffect(() => {
-    const xItem = xAxisArr.map((item,index) => {
+    const xItem = xAxisArr.map((item, index) => {
       return { x: item, y: item + index };
     });
-    setDataArr(xItem)
-  }, [months]);
+    setDataArr(xItem);
+  }, [months,manage]);
 
   const handleChange = (event) => {
     setManage(event.target.value);
@@ -125,10 +124,10 @@ const CheckingAccount = ({months,setMonths}) => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography width="100%" fontSize="14px" fontWeight="700">
+        <Typography fontSize="14px" fontWeight="700">
           Checking account
         </Typography>
-        <Box display="flex" gap="10px" width="100%">
+        <Box display="flex" gap="10px">
           <FormControl fullWidth>
             <Select
               sx={selectStyle}

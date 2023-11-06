@@ -12,11 +12,12 @@ const boxStyle = {
   width: "100%",
   borderRadius: "7px",
   backgroundColor: "#fff",
+  overflowX: "auto",
 };
 
 const Home = () => {
   const [months, setMonths] = useState("");
-  
+  const [manage, setManage] = useState("");
   return (
     <Box minHeight="100vh" display="flex">
       <Box width="15%">
@@ -33,10 +34,15 @@ const Home = () => {
             gap="20px"
           >
             <Box sx={boxStyle}>
-              <CheckingAccount setMonths={setMonths} months={months} />
+              <CheckingAccount
+                manage={manage}
+                setManage={setManage}
+                setMonths={setMonths}
+                months={months}
+              />
             </Box>
             <Box sx={boxStyle}>
-              <InvoicesOwned months={months} />
+              <InvoicesOwned />
             </Box>
           </Box>
           <Box
@@ -46,7 +52,7 @@ const Home = () => {
             gap="20px"
           >
             <Box sx={boxStyle}>
-              <TotalCash months={months} />
+              <TotalCash />
             </Box>
             <Box sx={boxStyle}>
               <AccountWatchList />

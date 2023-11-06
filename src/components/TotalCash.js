@@ -14,7 +14,7 @@ const mm = [
   "January",
 ];
 
-const TotalCash = ({ months }) => {
+const TotalCash = () => {
   const height = 250;
   const width = 530;
 

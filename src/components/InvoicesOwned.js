@@ -16,7 +16,7 @@ const mm = [
   "Future",
 ];
 
-const InvoicesOwned = ({ months }) => {
+const InvoicesOwned = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -110,7 +110,7 @@ const InvoicesOwned = ({ months }) => {
         alignItems="center"
       >
         <Typography fontSize="14px" fontWeight="700">
-          Invoices Owed to you
+          Invoices owed to you
         </Typography>
         <button onClick={handleOpen} className="btnHover">
           New Sales Invoice

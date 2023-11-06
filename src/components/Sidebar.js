@@ -88,6 +88,7 @@ const Sidebar = () => {
               />
               <Typography
                 fontSize="14px"
+                fontWeight="600"
                 color={activeIndex === index ? "#fff" : "#000"}
               >
                 {item.name}
