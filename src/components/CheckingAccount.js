@@ -7,18 +7,6 @@ import { faker } from "@faker-js/faker";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import * as d3 from "d3";
 
-const data = [
-  { x: 1, y: 90 },
-  { x: 2, y: 12 },
-  { x: 3, y: 34 },
-  { x: 4, y: 53 },
-  { x: 5, y: 52 },
-  { x: 6, y: 9 },
-  { x: 7, y: 18 },
-  { x: 8, y: 78 },
-  { x: 9, y: 28 },
-  { x: 10, y: 34 },
-];
 const MARGIN = { top: 10, bottom: 50, left: -10, right: -30 };
 
 const manageArr = ["Manage 1", "Manage 2", "Manage 3"];
@@ -76,14 +64,14 @@ const CheckingAccount = ({ months, setMonths, manage, setManage }) => {
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
   // Y axis
-  const [min, max] = d3.extent(dataArr, (d) => d.y);
+  const [ max] = d3.extent(dataArr, (d) => d.y);
   const yScale = d3
     .scaleLinear()
     .domain([0, max || 0])
     .range([boundsHeight, 0]);
 
   // X axis
-  const [xMin, xMax] = d3.extent(dataArr, (d) => d.x);
+  const [ xMax] = d3.extent(dataArr, (d) => d.x);
   const xScale = d3
     .scaleLinear()
     .domain([0, xMax || 0])
