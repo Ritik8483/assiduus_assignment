@@ -64,14 +64,15 @@ const CheckingAccount = ({ months, setMonths, manage, setManage }) => {
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
   // Y axis
-  const [ max] = d3.extent(dataArr, (d) => d.y);
+  const [min, max] = d3.extent(dataArr, (d) => d.y);
   const yScale = d3
     .scaleLinear()
     .domain([0, max || 0])
     .range([boundsHeight, 0]);
 
   // X axis
-  const [ xMax] = d3.extent(dataArr, (d) => d.x);
+  const [xMin, xMax] = d3.extent(dataArr, (d) => d.x);
+  console.log(min,xMin);
   const xScale = d3
     .scaleLinear()
     .domain([0, xMax || 0])
